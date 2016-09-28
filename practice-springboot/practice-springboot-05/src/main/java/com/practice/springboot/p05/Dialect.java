@@ -1,4 +1,4 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p05;
 
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;

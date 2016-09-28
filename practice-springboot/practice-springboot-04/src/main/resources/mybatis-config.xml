@@ -25,7 +25,7 @@
         <setting name="defaultStatementTimeout" value="25000" />
     </settings>
     <plugins>
-        <plugin interceptor="com.practice.springboot.p06.common.PaginationStatementInterceptor">
+        <plugin interceptor="com.practice.springboot.p07.common.PaginationStatementInterceptor">
         </plugin>
     </plugins>
 </configuration>

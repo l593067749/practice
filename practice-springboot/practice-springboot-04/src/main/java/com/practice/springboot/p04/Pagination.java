@@ -1,4 +1,4 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p04;
 
 import java.util.List;
 

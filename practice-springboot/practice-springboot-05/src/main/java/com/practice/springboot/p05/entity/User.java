@@ -1,4 +1,4 @@
-package com.practice.springboot.p06.entity;
+package com.practice.springboot.p05.entity;
 
 import java.io.Serializable;
 

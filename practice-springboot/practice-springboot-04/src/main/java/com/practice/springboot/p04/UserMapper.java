@@ -1,6 +1,6 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p04;
 
-import com.practice.springboot.p06.entity.User;
+import com.practice.springboot.p04.entity.User;
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;

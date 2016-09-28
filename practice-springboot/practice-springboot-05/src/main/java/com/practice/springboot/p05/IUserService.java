@@ -1,6 +1,6 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p05;
 
-import com.practice.springboot.p06.entity.User;
+import com.practice.springboot.p05.entity.User;
 
 import java.util.List;
 

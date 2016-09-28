@@ -1,13 +1,14 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p05;
 
 
-import com.practice.springboot.p06.entity.User;
-import org.mybatis.spring.annotation.MapperScan;
+import com.practice.springboot.p05.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,14 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.*;
 
 @RestController
-@EnableAutoConfiguration
-@MapperScan("com.practice.springboot.p06")
+@Configuration //配置文件
+@EnableAutoConfiguration //启用默认的spring配置方式
+@ComponentScan //定义扫描的basepack
 public class Application {
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 	@Autowired
 	private UserMapper userMapper;
 	@Autowired
 	private User2Mapper user2Mapper;
+	@Autowired
+	private IUserService userService;
 	@RequestMapping("/")
 	String home() {
 		return "Hello World!";
@@ -88,6 +92,22 @@ public class Application {
 		PaginationStatementInterceptor.startPage(pageNum,pageSize);
 		List<User> list = userMapper.findAll();
 		return  PaginationStatementInterceptor.endPage();
+	}
+	@RequestMapping("/addUsers")
+	public String bathAddUser(){
+		List<User> users=new ArrayList<User>();
+		for(int i=0;i<5;i++){
+			User user=new User();
+			user.setName(i+"-user");
+			user.setAge(i*10+1);
+			if(i/4==1){
+				user.setName(System.currentTimeMillis()+"-user-"+System.currentTimeMillis());
+			}
+
+			users.add(user);
+		}
+		userService.bathAddUser(users);
+		return "";
 	}
 
 	public static void main(String[] args) throws Exception {

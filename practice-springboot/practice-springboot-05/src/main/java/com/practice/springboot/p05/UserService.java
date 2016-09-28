@@ -1,6 +1,6 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p05;
 
-import com.practice.springboot.p06.entity.User;
+import com.practice.springboot.p05.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

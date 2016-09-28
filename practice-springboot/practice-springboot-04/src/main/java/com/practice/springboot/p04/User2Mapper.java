@@ -1,6 +1,6 @@
-package com.practice.springboot.p06;
+package com.practice.springboot.p04;
 
-import com.practice.springboot.p06.entity.User;
+import com.practice.springboot.p04.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
