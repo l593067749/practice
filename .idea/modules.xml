@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/practice.iml" filepath="$PROJECT_DIR$/practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-01/practice-springboot-01.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-01/practice-springboot-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-02/practice-springboot-02.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-02/practice-springboot-02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-03/practice-springboot-03.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-03/practice-springboot-03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-04/practice-springboot-04.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-04/practice-springboot-04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-05/practice-springboot-05.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-05/practice-springboot-05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-06/practice-springboot-06.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-06/practice-springboot-06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/practice-tes01/practice-tes01.iml" filepath="$PROJECT_DIR$/practice-tes01/practice-tes01.iml" />
+    </modules>
+  </component>
+</project>
