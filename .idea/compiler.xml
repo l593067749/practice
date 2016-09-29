@@ -29,6 +29,7 @@
         <module name="practice-springboot-05" />
         <module name="practice-springboot-06" />
         <module name="practice-springboot-07" />
+        <module name="practice-springboot-08" />
         <module name="practice-tes01" />
       </profile>
     </annotationProcessing>
@@ -42,6 +43,7 @@
       <module name="practice-springboot-05" target="1.5" />
       <module name="practice-springboot-06" target="1.5" />
       <module name="practice-springboot-07" target="1.5" />
+      <module name="practice-springboot-08" target="1.5" />
       <module name="practice-tes01" target="1.5" />
     </bytecodeTargetLevel>
   </component>
