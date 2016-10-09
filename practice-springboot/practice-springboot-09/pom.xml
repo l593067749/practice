@@ -128,7 +128,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring.boot.version}</version>
                 <configuration>
-                    <mainClass>com.practice.springboot.p07.SampleWebJspApplication</mainClass>
+                    <mainClass>com.practice.springboot.p09.SampleWebJspApplication</mainClass>
                     <layout>ZIP</layout>
                 </configuration>
                 <executions>
