@@ -100,6 +100,13 @@
             <artifactId>spring-boot-starter-velocity</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
+        <!-- 热部署-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring.boot.version}</version>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <!-- 切换环境使用-->
@@ -130,6 +137,7 @@
                 <configuration>
                     <mainClass>com.practice.springboot.p09.SampleWebJspApplication</mainClass>
                     <layout>ZIP</layout>
+                    <fork>true</fork>
                 </configuration>
                 <executions>
                     <execution>
