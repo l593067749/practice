@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.practice.springboot.p10.dao.UserMapper">
+    <resultMap id="stuMap" type="com.practice.springboot.p10.entity.User">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="age" column="age" />
+    </resultMap>
+
+    <select id="getByIdByXmlMapper" resultMap="stuMap" parameterType="com.practice.springboot.p10.entity.User">
+        SELECT *
+        FROM test_user
+        WHERE ID = #{id}
+    </select>
+   <!-- <select id="getByIdByXmlMapper" resultType="User" parameterType="User">
+        SELECT *
+        FROM test_user
+        WHERE ID = #{id}
+    </select>-->
+
+
+
+</mapper>
