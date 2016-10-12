@@ -41,7 +41,7 @@ public class ThmleafController {
     }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(HttpServletRequest request, Map<String, Object> map){
+    public String login(HttpServletRequest request, Map<String, Object> map) throws Exception{
 // 登录失败从request中获取shiro处理的异常信息。
         // shiroLoginFailure:就是shiro异常类的全类名.
         String exception = (String) request.getAttribute("shiroLoginFailure");
