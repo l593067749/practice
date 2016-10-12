@@ -1,6 +1,7 @@
 package com.practice.springboot.p10.config;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
@@ -94,6 +95,8 @@ public class ShiroConfiguration {
     public SecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(shiroRealm());
+        //注入缓存管理器后，就能避免每次都进入授权和登录验证里边。
+        securityManager.setCacheManager(ehCacheManager());//这个如果执行多次，也是同样的一个对象;
         return securityManager;
     }
     /**
@@ -120,7 +123,20 @@ public class ShiroConfiguration {
         daap.setProxyTargetClass(true);
         return daap;
     }
-
+    /**
+     * shiro缓存管理器;
+     * 需要注入对应的其它的实体类中：
+     * 1、安全管理器：securityManager
+     * 可见securityManager是整个shiro的核心；
+     * @return
+     */
+    @Bean
+    public EhCacheManager ehCacheManager(){
+        System.out.println("ShiroConfiguration.getEhCacheManager()");
+        EhCacheManager cacheManager = new EhCacheManager();
+        cacheManager.setCacheManagerConfigFile("classpath:ehcache-shiro.xml");
+        return cacheManager;
+    }
 
 }
    
