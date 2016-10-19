@@ -110,6 +110,7 @@ public class ShiroRealm extends AuthorizingRealm{
     authorizationInfo.addRole("admin");
         //添加权限 
      authorizationInfo.addStringPermission("/thmleaf/userAdd:GET");
+     authorizationInfo.addStringPermission("/thmleaf/:GET");
 
       
       
