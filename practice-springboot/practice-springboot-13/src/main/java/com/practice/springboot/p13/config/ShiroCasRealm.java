@@ -1,10 +1,12 @@
 package com.practice.springboot.p13.config;
 
+import com.practice.springboot.p13.common.properties.CasSettings;
 import com.practice.springboot.p13.entity.User;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.cas.CasRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 
@@ -14,15 +16,6 @@ import javax.annotation.PostConstruct;
  *
  */
 public class ShiroCasRealm extends CasRealm {
-    public static final String casServerUrlPrefix="https://www.wenqiang.com:8443/cas";
-    // 当前工程对外提供的服务地址
-    public static final String shiroServerUrlPrefix = "http://www.wenqiang.com:8080";
-    // casFilter UrlPattern
-    public static final String casFilterUrlPattern = "/shiro-cas";
-    // 登录地址
-    public static final String loginUrl = casServerUrlPrefix +"/login" + "?service=" + shiroServerUrlPrefix + casFilterUrlPattern;
-    // Cas登出页面地址
-    public static final String casLogoutUrl = casServerUrlPrefix + "/logout"+ "?service=" + shiroServerUrlPrefix + casFilterUrlPattern;;
 
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
 

@@ -1,6 +1,7 @@
 package com.practice.springboot.p13.config;
 
 import com.practice.springboot.p13.common.filter.MyURLPermissionFilter;
+import com.practice.springboot.p13.common.properties.CasSettings;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.cas.CasFilter;
@@ -9,6 +10,8 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.web.mgt.CookieRememberMeManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -16,7 +19,6 @@ import java.util.Map;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
-import org.springframework.context.annotation.Bean;
 
 /**
  * Shiro 配置
@@ -30,6 +32,14 @@ Apache Shiro 核心通过 Filter 来实现，就好像SpringMvc 通过DispachSer
 public class ShiroConfiguration {
 
 
+    @Bean(name = "casSettings")
+    @ConfigurationProperties(prefix = "mycas")
+    /**
+     * 之所以这样用是因为保证CasSettings初始化在本类之前
+     */
+    public CasSettings getCasSettings() {
+        return  new CasSettings();
+    }
 
     /**
      * ShiroFilterFactoryBean 处理拦截资源文件问题。
@@ -56,11 +66,13 @@ public class ShiroConfiguration {
      * @return
      */
     public ShiroFilterFactoryBean getCasShiroFilter(SecurityManager securityManager) {
+        String loginUrl= getCasSettings().getLoginUrl();
+
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         // 必须设置 SecurityManager
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
-        shiroFilterFactoryBean.setLoginUrl(ShiroCasRealm.loginUrl);
+        shiroFilterFactoryBean.setLoginUrl(loginUrl);
 
         // 登录成功后要跳转的连接
         shiroFilterFactoryBean.setSuccessUrl("/thmleaf/");
@@ -72,7 +84,7 @@ public class ShiroConfiguration {
         /////////////////////// 下面这些规则配置最好配置到配置文件中 ///////////////////////
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
         filterChainDefinitionMap.put("/thmleaf/logout", "logout");
-        filterChainDefinitionMap.put(ShiroCasRealm.casFilterUrlPattern, "casFilter");// shiro集成cas后，首先添加该规则
+        filterChainDefinitionMap.put(getCasSettings().getCasFilterUrlPattern(), "casFilter");// shiro集成cas后，首先添加该规则
 
         // authc：该过滤器下的页面必须验证后才能访问，它是Shiro内置的一个拦截器org.apache.shiro.web.filter.authc.FormAuthenticationFilter
         filterChainDefinitionMap.put("/thmleaf/", "authc");// 这里为了测试，只限制/user，实际开发中请修改为具体拦截的请求规则
@@ -148,9 +160,9 @@ public class ShiroConfiguration {
      */
     public ShiroCasRealm shiroCasRealm(){
         ShiroCasRealm shiroRealm=new ShiroCasRealm();
-        shiroRealm.setCasServerUrlPrefix(ShiroCasRealm.casServerUrlPrefix);
+        shiroRealm.setCasServerUrlPrefix(getCasSettings().getServerUrlPrefix());
         // 客户端回调地址
-        shiroRealm.setCasService(ShiroCasRealm.shiroServerUrlPrefix + ShiroCasRealm.casFilterUrlPattern);
+        shiroRealm.setCasService(getCasSettings().getShiroServerUrlPrefix() + getCasSettings().getCasFilterUrlPattern());
         return shiroRealm;
     }
 
@@ -160,7 +172,9 @@ public class ShiroConfiguration {
      */
     public ShiroCasLogout shiroCasLogout(){
         ShiroCasLogout shiroCasLogout=new ShiroCasLogout();
-        shiroCasLogout.setRedirectUrl(ShiroCasRealm.casLogoutUrl);
+        // Cas登出页面地址
+        String casLogoutUrl = getCasSettings().getCasLogoutUrl();
+        shiroCasLogout.setRedirectUrl(casLogoutUrl);
         return shiroCasLogout;
     }
 

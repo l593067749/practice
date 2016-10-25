@@ -2,6 +2,7 @@ package com.practice.springboot.p13.controller;
 
 import com.practice.springboot.p13.common.Pagination;
 import com.practice.springboot.p13.common.PaginationStatementInterceptor;
+import com.practice.springboot.p13.common.properties.CasSettings;
 import com.practice.springboot.p13.common.properties.ConnectionSettings;
 import com.practice.springboot.p13.dao.UserMapper;
 import com.practice.springboot.p13.entity.User;
@@ -25,6 +26,8 @@ public class FristController {
     private IUserService userService;
     @Autowired
     private ConnectionSettings connectionSettings;
+    @Autowired
+    private CasSettings casSettings;
     @RequestMapping("/")
     String home() {
         return "Hello World!";
