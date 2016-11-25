@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 @RestController
@@ -26,7 +27,7 @@ public class Application {
 	private UserMapper userMapper;
 	@Autowired
 	private User2Mapper user2Mapper;
-	@Autowired
+	@Resource(name = "userService")
 	private IUserService userService;
 	@RequestMapping("/")
 	String home() {
@@ -107,6 +108,11 @@ public class Application {
 			users.add(user);
 		}
 		userService.bathAddUser(users);
+		return "";
+	}
+	@RequestMapping("/testTransactional")
+	public String testTransactional() throws Exception {
+		userService.addUser();
 		return "";
 	}
 

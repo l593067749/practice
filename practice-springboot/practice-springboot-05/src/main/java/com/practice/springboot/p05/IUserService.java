@@ -9,4 +9,5 @@ import java.util.List;
  */
 public interface IUserService {
    public void bathAddUser(List<User> users);
+   public  void addUser() throws Exception;
 }
