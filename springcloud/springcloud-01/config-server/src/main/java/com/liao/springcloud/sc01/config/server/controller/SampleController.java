@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * Created by liaowenqiang on 2017/4/28.
  */
-@Controller
+//@Controller
 public class SampleController {
     @ResponseBody
     @RequestMapping(value = "/")
