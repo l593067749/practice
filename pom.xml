@@ -11,6 +11,7 @@
     <modules>
         <module>practice-tes01</module>
         <module>practice-springboot</module>
+        <module>springcloud</module>
     </modules>
 
 
