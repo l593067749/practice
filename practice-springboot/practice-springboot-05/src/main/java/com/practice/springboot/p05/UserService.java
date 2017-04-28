@@ -24,17 +24,15 @@ public class UserService implements IUserService {
             userMapper.insertByUser(user);
         }
     }
-   @Transactional(propagation = Propagation.REQUIRED, rollbackFor = java.lang.Exception.class)
-
+    @Transactional(propagation = Propagation.REQUIRED, rollbackFor = java.lang.Exception.class)
     public  void addUser() throws Exception {
        try {
-            userService.addUser();//这个方法没事务
+            userService.addUser3();//这个方法没事务
         }catch (Exception e){
-            User user=new User();
-            user.setName("A 插入");
-            userMapper.insertByUser(user);
-            //throw  e;
+
         }
+       User user=new User();
+       userMapper.insertByUser(user);
 
         /*try {
             userService.addUser2();

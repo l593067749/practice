@@ -41,7 +41,7 @@ public class UserService2 {
     public void addUser3(){
         User user=new User();
         user.setAge(1);
-        user.setName("UserService2-"+"addUser2:没加事务");
+        user.setName("UserService2-"+"addUser3:没加事务");
         userMapper.insertByUser(user);
     }
 }
