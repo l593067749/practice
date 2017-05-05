@@ -16,6 +16,7 @@
         <module>eureka-client</module>
         <module>ribbon</module>
         <module>config-server2</module>
+        <module>config-test</module>
     </modules>
 
 
