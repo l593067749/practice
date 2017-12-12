@@ -1,4 +1,4 @@
-package liao.practice.springclound02.eurekaclient;
+package liao.practice.springclound02.eurekaclient02;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
