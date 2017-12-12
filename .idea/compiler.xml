@@ -22,20 +22,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="practice-springboot-01" />
-        <module name="practice-springboot-02" />
-        <module name="practice-springboot-03" />
-        <module name="practice-springboot-04" />
-        <module name="practice-springboot-05" />
-        <module name="practice-springboot-06" />
-        <module name="practice-springboot-07" />
-        <module name="practice-springboot-08" />
-        <module name="practice-springboot-09" />
-        <module name="practice-springboot-10" />
-        <module name="practice-tes01" />
+        <module name="config-server" />
+        <module name="config-server2" />
+        <module name="config-test" />
+        <module name="eureka" />
+        <module name="eureka-client" />
+        <module name="ribbon" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config-repo" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="config-server2" target="1.8" />
+      <module name="config-test" target="1.8" />
+      <module name="eureka" target="1.8" />
+      <module name="eureka-client" target="1.8" />
       <module name="practice" target="1.5" />
       <module name="practice-springboot" target="1.5" />
       <module name="practice-springboot-01" target="1.5" />
@@ -48,7 +49,16 @@
       <module name="practice-springboot-08" target="1.5" />
       <module name="practice-springboot-09" target="1.5" />
       <module name="practice-springboot-10" target="1.5" />
+      <module name="practice-springboot-11" target="1.5" />
+      <module name="practice-springboot-12" target="1.5" />
+      <module name="practice-springboot-13" target="1.5" />
+      <module name="practice-springboot-14" target="1.5" />
       <module name="practice-tes01" target="1.5" />
+      <module name="ribbon" target="1.8" />
+      <module name="springcloud" target="1.8" />
+      <module name="springcloud-01" target="1.8" />
+      <module name="springcloud-02" target="1.8" />
+      <module name="springclound-02" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

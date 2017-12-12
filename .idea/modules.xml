@@ -2,19 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-01/config-server/config-server.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-01/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-02/config-server2/config-server2.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-02/config-server2/config-server2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-02/config-test/config-test.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-02/config-test/config-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-02/eureka/eureka.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-02/eureka/eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-02/eureka-client/eureka-client.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-02/eureka-client/eureka-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/practice.iml" filepath="$PROJECT_DIR$/practice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-01/practice-springboot-01.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-01/practice-springboot-01.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-02/practice-springboot-02.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-02/practice-springboot-02.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-03/practice-springboot-03.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-03/practice-springboot-03.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-04/practice-springboot-04.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-04/practice-springboot-04.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-05/practice-springboot-05.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-05/practice-springboot-05.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-06/practice-springboot-06.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-06/practice-springboot-06.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-07/practice-springboot-07.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-07/practice-springboot-07.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-08/practice-springboot-08.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-08/practice-springboot-08.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-09/practice-springboot-09.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-09/practice-springboot-09.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-springboot/practice-springboot-10/practice-springboot-10.iml" filepath="$PROJECT_DIR$/practice-springboot/practice-springboot-10/practice-springboot-10.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice-tes01/practice-tes01.iml" filepath="$PROJECT_DIR$/practice-tes01/practice-tes01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-02/ribbon/ribbon.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-02/ribbon/ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud.iml" filepath="$PROJECT_DIR$/springcloud/springcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud/springcloud-02/springcloud-02.iml" filepath="$PROJECT_DIR$/springcloud/springcloud-02/springcloud-02.iml" />
     </modules>
   </component>
 </project>
