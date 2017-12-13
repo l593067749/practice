@@ -7,6 +7,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -17,7 +18,9 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 // 开启断路器
 @EnableHystrix
-public class Application extends SpringBootServletInitializer {
+// 开启HystrixDashboard
+@EnableHystrixDashboard
+public class RibbonApplication extends SpringBootServletInitializer {
 
     @Bean
     @LoadBalanced
@@ -27,9 +30,9 @@ public class Application extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(Application.class);
+        return application.sources(RibbonApplication.class);
     }
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(RibbonApplication.class, args);
     }
 }

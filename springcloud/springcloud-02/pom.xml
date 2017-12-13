@@ -18,6 +18,7 @@
         <module>config-server2</module>
         <module>config-test</module>
         <module>service-zuul</module>
+        <module>server-zipkin</module>
     </modules>
 
 
