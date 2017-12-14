@@ -17,9 +17,9 @@ import java.util.Map;
  */
 public class DbUtils {
 private Connection conn = null;
-private String username = "gdc";
-private String password = "gdckog";
-private String url="jdbc:mysql://GDC-KOG-db-01.offline.hupu.com:3306/gdc_kog_hupu";
+private String username = "";
+private String password = "";
+private String url="";
 /**
  * @描述:用来在类中最先执行数据库的驱动加载
  * @作者：KingTiger
