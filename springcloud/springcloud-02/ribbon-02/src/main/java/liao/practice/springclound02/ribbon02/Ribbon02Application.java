@@ -1,4 +1,4 @@
-package liao.practice.springclound02.ribbon;
+package liao.practice.springclound02.ribbon02;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
@@ -25,20 +25,21 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 @EnableHystrix
 @EnableHystrixDashboard
-public class RibbonApplication extends SpringBootServletInitializer {
 
-    @Bean
+public class Ribbon02Application extends SpringBootServletInitializer {
+
+    /*@Bean
     @LoadBalanced
     RestTemplate restTemplate() {
         return new RestTemplate();
-    }
+    }*/
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(RibbonApplication.class);
+        return application.sources(Ribbon02Application.class);
     }
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(RibbonApplication.class, args);
+        SpringApplication.run(Ribbon02Application.class, args);
     }
 
 }

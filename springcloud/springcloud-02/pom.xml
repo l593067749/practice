@@ -15,10 +15,12 @@
         <module>eureka</module>
         <module>eureka-client</module>
         <module>ribbon</module>
+        <module>ribbon-02</module>
         <module>config-server2</module>
         <module>config-test</module>
         <module>service-zuul</module>
         <module>server-zipkin</module>
+        <module>service-turbine</module>
     </modules>
 
 

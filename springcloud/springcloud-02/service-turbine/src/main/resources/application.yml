@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: service-turbine
+
+server:
+  port: 3339
+
+security:
+  basic:
+    enabled: false
+
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: ribbon-02-consumer,ribbon-consumer
+  clusterNameExpression: new String("default")
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
