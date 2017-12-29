@@ -1,4 +1,4 @@
-package com.liao.practice.test01;
+package com.liao.practice.test01.thread;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
