@@ -8,7 +8,7 @@ public interface IInterface {
      * 执行任务
      * @param taskName 任务名称
      */
-    public void dealTask (String taskName);
+    public String dealTask (String taskName);
 
     /**
      * 停止任务

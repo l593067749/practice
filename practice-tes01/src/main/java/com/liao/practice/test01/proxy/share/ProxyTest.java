@@ -11,7 +11,8 @@ public class ProxyTest {
     }
     public void testDynProxy(){
         IInterface face=ProxyFactory.getDynInstance();
-        face.dealTask("构建工程");
+        System.out.println("获取执行结果："+face.dealTask("构建工程"));
+        System.out.println("--------------------------");
         face.stopTask("构建工程");
     }
     public static void main(String[] args) {

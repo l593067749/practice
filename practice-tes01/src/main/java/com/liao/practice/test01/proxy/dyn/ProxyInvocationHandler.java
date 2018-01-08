@@ -16,16 +16,17 @@ public class ProxyInvocationHandler implements InvocationHandler {
     }
 
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object object=null;
         System.out.println("在方法执行前做一些处理");
         try {
             Thread.sleep(500);
             //利用反射机制将请求分派给委托类处理。Method的invoke返回Object对象作为方法执行结果。
-            method.invoke(delegate, args);
+            object=method.invoke(delegate, args);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
             System.out.println("在方法执行后做一些处理");
         }
-        return null;
+        return object;
     }
 }

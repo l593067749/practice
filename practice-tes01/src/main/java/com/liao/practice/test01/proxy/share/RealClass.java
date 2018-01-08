@@ -6,8 +6,9 @@ package com.liao.practice.test01.proxy.share;
 public class RealClass implements IInterface {
 
 
-    public void dealTask(String taskName) {
+    public String dealTask(String taskName) {
         System.out.println("执行["+taskName+"]中。。。");
+        return "SUCCESS";
     }
 
     public void stopTask(String taskName) {

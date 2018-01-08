@@ -10,16 +10,18 @@ public class ProxyClass implements IInterface {
     public ProxyClass(IInterface face){
         this.face=face;
     }
-    public void dealTask(String taskName) {
+    public String dealTask(String taskName) {
         System.out.println("在方法执行前做一些处理");
+        String str=null;
         try {
             Thread.sleep(1000);
-            face.dealTask(taskName);
+            str=face.dealTask(taskName);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
             System.out.println("在方法执行后做一些处理");
         }
+        return str;
     }
 
     public void stopTask(String taskName) {
