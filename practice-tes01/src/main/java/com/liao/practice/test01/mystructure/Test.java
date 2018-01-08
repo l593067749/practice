@@ -22,6 +22,7 @@ public class Test {
         for(int i=0;i<20;i++){
             list.add(i);
         }
+
         list.display();
         list.removeFirst();
         list.display();
@@ -44,9 +45,11 @@ public class Test {
     private void testMyArrayList() {
         MyArrayList list=new MyArrayList();
         list.add(null);
+        list.add(16);
         for(int i=0;i<20;i++){
             list.add(i);
         }
+
         System.out.println("size:" + list.size() + ",array_size:" + list.arraySize());
         for(int i=0;i<list.size();i++){
             System.out.print(list.get(i)+"\t");

@@ -2,6 +2,11 @@ package com.liao.practice.test01.algorithm;
 
 import java.util.Arrays;
 
+/**
+ * 假设有一个n个元素的数组，那么需要进行n-1轮排序，每一轮排序都确定一个数字的最终位置。
+ * 对于一组需要排序的数字，依次将个位置上的数字与逐一与其之后的数字进行比较，如果他们的顺序错误就把他们交换过来。
+ * 这个算法的名字由来是因为越大的元素会经由交换慢慢“浮”到数列的顶端，故名
+ */
 public class BubbleSort {
     /**
      * @param arr 需要排序的数组

@@ -1,5 +1,4 @@
 package com.liao.practice.test01.mystructure;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -24,7 +23,7 @@ public class MyArrayList<T>  {
     public void add(T element){
         if(element_size>=array_size){
           //不够扩充一半
-            array_size+=array_size>>2;
+            array_size+=array_size>>1;
             Object[] new_array=new Object[array_size];
             System.arraycopy(array,0,new_array,0,array.length);
             array=new_array;
@@ -54,16 +53,16 @@ public class MyArrayList<T>  {
         return array_size;
     }
     public class MyIterable implements Iterator<T>{
-       int cursor;
-       int last;
+       int nextIndex;//下一个下标
+       int last;//当前下标
         @Override
         public boolean hasNext() {
-            return cursor!=element_size;
+            return nextIndex !=element_size;
         }
 
         @Override
         public T next() {
-            int i=cursor++;
+            int i= nextIndex++;
             if(i>=array_size){
                 throw new NoSuchElementException();
             }
@@ -75,7 +74,7 @@ public class MyArrayList<T>  {
                 throw new IllegalStateException();
             }
             MyArrayList.this.remove(last);
-            cursor=last;
+            nextIndex =last;
             last=-1;
         }
     }
